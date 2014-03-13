@@ -1,4 +1,4 @@
-histc
+HISTC
 =====
 
 One-dimensional histogram calculation.
