@@ -1,0 +1,46 @@
+{
+  "name": "histc",
+  "version": "0.0.0",
+  "description": "Calculate a histogram for a one-dimensional vector of numeric values.",
+  "author": {
+    "name": "Athan Reines",
+    "email": "athan@nodeprime.com"
+  },
+  "contributors": [
+    {
+      "name": "Athan Reines",
+      "email": "athan@nodeprime.com"
+    }
+  ],
+  "scripts": {
+    "test": "mocha"
+  },
+  "main": "./lib",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kgryte/histc.git"
+  },
+  "keywords": [
+    "binning",
+    "histogram",
+    "hist",
+    "statistics",
+    "computation"
+  ],
+  "bugs": {
+    "url": "https://github.com/kgryte/histc/issues"
+  },
+  "dependencies": {
+    "binsearch": "~0.0.0"
+  },
+  "devDependencies": {
+    "mocha": "1.x.x",
+    "chai": "1.x.x"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ]
+}
