@@ -58,48 +58,30 @@ describe( 'histc', function tests() {
 		}
 	});
 
-	it( 'should compute the histogram for input data', function test( done ) {
-		var data, expected, rStream,
+	it( 'should compute the histogram for input data', function test() {
+		var data, expected,
 			edges = [ -0.5, 0.5, 1.5, 2.5, 3.5, 4.5, 5.5 ];
 
 		// Simulate some data...
 		data = [ 1, 1, 1, 2, 3, 3, 3, 3, 4 ];
 
 		// Expected counts (histc also returns negative and positive infinity bins which include data which does not fall into any bin defined by the edge vector):
-		expected = [
-			[ Number.NEGATIVE_INFINITY, 0, -0.5 ], // -infinity
-			[ -0.5, 0, 0.5 ],
-			[ 0.5, 3, 1.5 ],
-			[ 1.5, 1, 2.5 ],
-			[ 2.5, 4, 3.5 ],
-			[ 3.5, 1, 4.5 ],
-			[ 4.5, 0, 5.5 ],
-			[ 5.5, 0, Number.POSITIVE_INFINITY ] // +infinity
-		];
+		expected = [ 0, 0, 3, 1, 4, 1, 0, 0 ];
 
 		// Test:
 		assert.deepEqual( histc( data, edges ), expected );
 
 	});
 
-	it( 'should, when computing the histogram counts, assign out-of-bounds data to appropriate bins', function test( done ) {
-		var data, expected, rStream,
+	it( 'should, when computing the histogram counts, assign out-of-bounds data to appropriate bins', function test() {
+		var data, expected,
 			edges = [ -0.5, 0.5, 1.5, 2.5, 3.5, 4.5, 5.5 ];
 
 		// Simulate some data...
 		data = [ -1, -100, Number.NEGATIVE_INFINITY, 6, 100, Number.POSITIVE_INFINITY ];
 
 		// Expected counts (histc also returns negative and positive infinity bins which include data which does not fall into any bin defined by the edge vector):
-		expected = [
-			[ Number.NEGATIVE_INFINITY, 3, -0.5 ], // -infinity
-			[ -0.5, 0, 0.5 ],
-			[ 0.5, 0, 1.5 ],
-			[ 1.5, 0, 2.5 ],
-			[ 2.5, 0, 3.5 ],
-			[ 3.5, 0, 4.5 ],
-			[ 4.5, 0, 5.5 ],
-			[ 5.5, 3, Number.POSITIVE_INFINITY ] // +infinity
-		];
+		expected = [ 3, 0, 0, 0, 0, 0, 0, 3 ];
 
 		// Test:
 		assert.deepEqual( histc( data, edges ), expected );
