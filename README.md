@@ -3,6 +3,14 @@ HISTC
 
 One-dimensional histogram calculation.
 
+
+## Installation
+
+``` bash
+$ npm install histc
+```
+
+
 ## Examples
 
 ``` javascript
